@@ -9,13 +9,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from freshbl device
 $(call inherit-product, device/samsung/freshbl/device.mk)
 
 PRODUCT_DEVICE := freshbl
-PRODUCT_NAME := omni_freshbl
+PRODUCT_NAME := twrp_freshbl
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-R870
 PRODUCT_MANUFACTURER := samsung

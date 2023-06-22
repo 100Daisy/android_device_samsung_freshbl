@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_freshbl.mk
+    $(LOCAL_DIR)/twrp_freshbl.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_freshbl-user \
-    omni_freshbl-userdebug \
-    omni_freshbl-eng
+    twrp_freshbl-user \
+    twrp_freshbl-userdebug \
+    twrp_freshbl-eng
