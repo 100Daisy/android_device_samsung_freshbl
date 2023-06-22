@@ -1,0 +1,23 @@
+on init
+    # unlink /efs > /mnt/vendor/efs
+    rm /efs
+    mkdir /efs
+    mkdir /sec_efs
+
+    # optimized buffer size for wireless download
+    write /proc/sys/net/ipv4/tcp_rmem "4096 131072 262144"
+    write /proc/sys/net/ipv4/tcp_wmem "4096 131072 2621440"
+    write /proc/sys/net/core/rmem_max "262144"
+    write /proc/sys/net/core/wmem_max "2621440"
+
+on post-fs-data
+    mkdir /data/vendor
+    mkdir /data/vendor/conn 0771
+    mkdir /data/vendor/wifi 0771
+    mkdir /data/vendor/wifi/hostapd 0770
+    mkdir /data/vendor/wifi/wpa 0770
+    mkdir /data/vendor/wifi/wpa/sockets 0770
+    mkdir /data/vendor/log/wifi 0770 wifi system
+
+on boot
+    setprop wifi.interface wlan0
